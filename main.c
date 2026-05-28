@@ -1,14 +1,36 @@
+#include "vec.h"
 #include <stdio.h>
-#include "calculator.h"
+#include <time.h>
+
+void fibo(void);
+double elapsed_(struct timespec start, struct timespec now);
+
+vec fibNums = {0};
+int firstTwo[] = {0, 1};
 
 int main(void) {
-    double a = 10.0;
-    double b = 3.0;
+  struct timespec start, now;
+  clock_gettime(CLOCK_MONOTONIC, &start);
+  intvec_push_many(&fibNums, firstTwo, 2);
 
-    printf("%.1f + %.1f = %.1f\n", a, b, add(a, b));
-    printf("%.1f - %.1f = %.1f\n", a, b, subtract(a, b));
-    printf("%.1f * %.1f = %.1f\n", a, b, multiply(a, b));
-    printf("%.1f / %.1f = %.1f\n", a, b, divide(a, b));
+  long count = 0;
 
-    return 0;
+  while (1) {
+    clock_gettime(CLOCK_MONOTONIC, &now);
+    double elapsed =
+        (now.tv_sec - start.tv_sec) + (now.tv_nsec - start.tv_nsec) / 1e9;
+    if (elapsed >= 1.0)
+      break;
+
+    fibo();
+    count++;
+  }
+
+  print_last(&fibNums);
+  printf("Ran %ld times in 1 second\n", count);
+}
+
+void fibo(void) {
+    intvec_push(&fibNums,
+                fibNums.data[fibNums.len - 1] + fibNums.data[fibNums.len - 2]);
 }

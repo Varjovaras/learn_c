@@ -1,8 +1,7 @@
 [
     {
         "label": "Build all with all warnings",
-        "command": "gcc -Wall -Wextra -Wpedantic -Werror -o main main.c calculator.c && ./main",
-        "working_directory": "/Users/kristjan/Documents/github/c",
+        "command": "gcc -O3 -Wall -Wextra -Wpedantic -Werror -o main main.c vec.c && ./main",
         "reveal": "always",
     },
 ]
