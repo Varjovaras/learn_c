@@ -1,0 +1,31 @@
+[
+  {
+    "label": "Build main.c with all warnings",
+    "command": "clang",
+    "args": [
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-Werror",
+      "-o",
+      "main",
+      "main.c"
+    ],
+    "working_directory": "/Users/kristjan/Documents/github/c",
+    "reveal": "always"
+  },
+  {
+    "label": "Run main",
+    "command": "./main",
+    "shell": true,
+    "working_directory": "/Users/kristjan/Documents/github/c",
+    "reveal": "always"
+  },
+  {
+    "label": "Build and run main.c",
+    "command": "clang -Wall -Wextra -Wpedantic -Werror -o main main.c && ./main",
+    "shell": true,
+    "working_directory": "/Users/kristjan/Documents/github/c",
+    "reveal": "always"
+  }
+]
