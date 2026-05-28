@@ -1,21 +1,7 @@
 [
     {
         "label": "Build all with all warnings",
-        "command": "clang -Wall -Wextra -Wpedantic -Werror -o main main.c calculator.c && ./main",
-        "working_directory": "/Users/kristjan/Documents/github/c",
-        "reveal": "always",
-    },
-    {
-        "label": "Run main",
-        "command": "./main",
-        "shell": true,
-        "working_directory": "/Users/kristjan/Documents/github/c",
-        "reveal": "always",
-    },
-    {
-        "label": "Build and run all",
-        "command": "clang -Wall -Wextra -Wpedantic -Werror -o main main.c calculator.c && ./main",
-        "shell": true,
+        "command": "gcc -Wall -Wextra -Wpedantic -Werror -o main main.c calculator.c && ./main",
         "working_directory": "/Users/kristjan/Documents/github/c",
         "reveal": "always",
     },
