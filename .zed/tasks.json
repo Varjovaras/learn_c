@@ -1,7 +1,12 @@
 [
     {
-        "label": "Build all with all warnings",
+        "label": "Build vec with all warnings",
         "command": "gcc -O3 -Wall -Wextra -Wpedantic -Werror -o main main.c vec.c && ./main",
+        "reveal": "always",
+    },
+    {
+        "label": "Build  with all warnings",
+        "command": "gcc -O3 -Wall -Wextra -Wpedantic -Werror -o main main.c && ./main",
         "reveal": "always",
     },
 ]
